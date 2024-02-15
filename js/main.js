@@ -117,14 +117,14 @@ function removeAllActive() {
   });
 }
 // autoplay feature
-autoplay();
-function autoplay() {
-  setInterval(() => {
-    if (currentSlide < sliderImges.length) {
-      currentSlide++;
-    } else if (currentSlide >= sliderImges.length) {
-      currentSlide = 1;
-    }
-    theChecker();
-  }, 10000);
-}
+// autoplay();
+// function autoplay() {
+//   setInterval(() => {
+//     if (currentSlide < sliderImges.length) {
+//       currentSlide++;
+//     } else if (currentSlide >= sliderImges.length) {
+//       currentSlide = 1;
+//     }
+//     theChecker();
+//   }, 10000);
+// }
