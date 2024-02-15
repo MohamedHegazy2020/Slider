@@ -8,7 +8,7 @@ let sliderImges = Array.from(
 
 let slidesCount = sliderImges.length;
 // set current slide
-let currentSlide = 8;
+let currentSlide = 1;
 
 // Slide Number Element
 
@@ -78,6 +78,7 @@ function prevSlide() {
 
 theChecker();
 function theChecker() {
+
   slideNumberElement.textContent =
     "Slide #" + currentSlide + " of " + slidesCount;
 
@@ -114,4 +115,23 @@ function removeAllActive() {
   paginationBullets.forEach((li) => {
     li.classList.remove("active");
   });
+}
+// autoplay feature
+autoplay()
+ function autoplay() {
+    setInterval(() => {
+        if (currentSlide < sliderImges.length) {
+            currentSlide++;
+
+            console.log(currentSlide);
+        } else if (currentSlide >= sliderImges.length) {
+
+            currentSlide=1;
+            console.log(currentSlide);
+
+        }
+        theChecker()
+
+
+    }, 5000);
 }
