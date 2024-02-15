@@ -45,15 +45,16 @@ document.getElementById("indicators").appendChild(paginationElement);
 // get the new Created Ul
 let pagniationCreatedUl = document.getElementById("pagination-ul");
 
-
-let paginationBullets = Array.from(  document.querySelectorAll('#pagination-ul li'))
+let paginationBullets = Array.from(
+  document.querySelectorAll("#pagination-ul li")
+);
 // loop throw Bullets
 
 for (let i = 0; i < paginationBullets.length; i++) {
-paginationBullets[i].onclick = function(){
-    currentSlide = parseInt(this.getAttribute('data-index'))
-    theChecker()
-}    
+  paginationBullets[i].onclick = function () {
+    currentSlide = parseInt(this.getAttribute("data-index"));
+    theChecker();
+  };
 }
 
 // trigger theCheck function
@@ -68,21 +69,20 @@ function nextSlide() {
 }
 
 function prevSlide() {
-    if (prevButton.classList.contains("disabled")) {
-        return false;
-      } else {
-        currentSlide--;
-        theChecker();
-      }
+  if (prevButton.classList.contains("disabled")) {
+    return false;
+  } else {
+    currentSlide--;
+    theChecker();
+  }
 }
 
 theChecker();
 function theChecker() {
-
   slideNumberElement.textContent =
     "Slide #" + currentSlide + " of " + slidesCount;
 
-  removeAllActive()
+  removeAllActive();
 
   // set active class on current Slide
   sliderImges[currentSlide - 1].classList.add("active");
@@ -117,19 +117,14 @@ function removeAllActive() {
   });
 }
 // autoplay feature
-autoplay()
- function autoplay() {
-    setInterval(() => {
-        if (currentSlide < sliderImges.length) {
-            currentSlide++;
-
-        } else if (currentSlide >= sliderImges.length) {
-
-            currentSlide=1;
-
-        }
-        theChecker()
-
-
-    }, 5000);
+autoplay();
+function autoplay() {
+  setInterval(() => {
+    if (currentSlide < sliderImges.length) {
+      currentSlide++;
+    } else if (currentSlide >= sliderImges.length) {
+      currentSlide = 1;
+    }
+    theChecker();
+  }, 10000);
 }
