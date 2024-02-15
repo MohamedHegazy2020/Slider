@@ -123,11 +123,9 @@ autoplay()
         if (currentSlide < sliderImges.length) {
             currentSlide++;
 
-            console.log(currentSlide);
         } else if (currentSlide >= sliderImges.length) {
 
             currentSlide=1;
-            console.log(currentSlide);
 
         }
         theChecker()
